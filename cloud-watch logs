@@ -1,3 +1,12 @@
+sudo yum install -y amazon-cloudwatch-agent
+
+sudo vim /tmp/cloudwatch-agent-config.json 
+
+
+
+
+
+
 {
   "logs": {
     "logs_collected": {
@@ -11,5 +20,12 @@
         ]
       }
     }
+
+
+
+
+
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a 
+fetch-config -m ec2 -c file:/tmp/cloudwatch-agent-config.json -s
   }
 }
